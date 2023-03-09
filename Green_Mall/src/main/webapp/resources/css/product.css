@@ -1,0 +1,665 @@
+@charset "UTF-8";
+
+#proCt, #cont, #container, #proBox, #proBox #proCont{
+	height: unset;
+}
+
+#proBox .proCont #proUp{
+}
+
+.proPage{
+}
+
+.pHead{
+	height: 350px;
+}
+
+.pHead .pImage{
+	border: 1px solid grey;
+	width: 40%; height: 75%;
+	float: left;
+	margin: 15px 20px 0px 15px;
+}
+
+.pHead .pImage img{
+	width: 100%;
+	height: 100%;
+}
+
+.pHead .pInfo{
+	width: 50%; height: 257px;
+	float: left;
+	margin: 15px 0 0 0px;	
+}
+
+.pHead .pInfo .pTitle{
+	font-size: 16px;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+	width: 100%; height: 75px;	
+}
+
+.pHead .pInfo .pTitle h4{
+	margin-bottom: 5px;
+}
+
+.pHead .pInfo .pTitle p{
+	color: red;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.pHead .pInfo .pOption{
+	width: 100%; height: 120px;	
+	margin-top: 20px;
+}
+
+.pHead .pInfo .pOption .dropdown{
+	height: 100%;
+	display: inline-block;
+	position: relative;
+}
+
+.pHead .pInfo .pOption .dropdown .dropbtn{
+	border : 1px solid rgb(37, 37, 37);
+	border-radius : 4px;
+	background-color: #f5f5f5;
+	font-weight: 400;
+	color : rgb(37, 37, 37);
+	padding : 12px;
+	width :200px;
+	text-align: left;
+	cursor : pointer;
+	font-size : 12px;	
+	position: relative;
+}
+
+.pHead .pInfo .pOption .dropdown .dropbtn .Material-Icons{
+
+  font-size : 16px;
+  color : #3b3b3b;
+  position: absolute;
+  top: 10px; right: 10px;
+}
+
+.pHead .pInfo .pOption .dropdown .dropbtn_content{
+	display : none;
+  	background-color: #f9f9f9;
+	width: 200px;
+    position: absolute;
+    z-index: 1; 
+}
+
+.pHead .pInfo .pOption .dropdown .dropbtn_content div{
+	display: block;
+	color : rgb(37, 37, 37);
+	font-size: 12px;
+	padding : 12px 20px;
+	border-bottom: 1px solid rgba(0,0,0,0.3);	
+}
+  
+.pHead .pInfo .pPurchase{
+	width: 100%; height: 40px;
+}
+
+.pHead .pInfo .pPurchase .pQuantity{
+	position: relative;
+    width: 80px;
+    height: 40px;
+	float: left;
+	margin-right: 10px; 
+}
+
+.pHead .pInfo .pPurchase .pQuantity input{
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    font-size: 15px;
+	border: 1px solid rgba(0,0,0,0.5);
+    border-right: none;
+}
+
+.pHead .pInfo .pPurchase .pQuantity .qBtn{
+	width: 18px;
+    height: 22px;
+}
+
+.pHead .pInfo .pPurchase .pQuantity #up{
+	position: absolute; 
+	font-family : 'Material Icons';	
+}
+
+.pHead .pInfo .pPurchase .pQuantity #down{
+	position: absolute; top:20px;
+	font-family : 'Material Icons';	
+}
+
+.pHead .pInfo .pPurchase .pCart{
+	float: left;
+	margin-right: 10px; 
+}
+
+.pHead .pInfo .pPurchase .pCart button{
+	width: 90px;
+	height: 40px;	
+}
+
+.pHead .pInfo .pPurchase .pOrder{
+	float: left;	
+}
+
+.pHead .pInfo .pPurchase .pOrder button{
+	width: 90px;
+	height: 40px;	
+}
+
+.clear{
+	clear:both;
+}
+
+.pBody{
+	padding-left:15px;
+	margin-bottom: 30px;
+}
+
+.pBody .pTab a{
+	display: block;
+}
+
+.pBody .pTab ul{
+	text-align: center;
+	font-size:0;
+	letter-spacing: 0;
+	word-spacing: 0;
+	border: 1px solid #ccc;
+	border-top: 3px solid #ccc;
+}
+
+.pBody .pTab ul li{
+	font-size: 15px;
+	display: inline-block;
+	width: 24.5%; 
+	height: 50px;
+	line-height: 50px;
+	border-right: 1px solid #ccc;
+}
+
+.pBody .pTab ul #lastTab{
+	border-right: none;
+}
+
+.pBody .pAd{
+	padding-top: 30px;
+	border-bottom: 1px solid grey;
+}
+
+.pBody .pAd .pDetail{
+	padding: 0 10px 0 10px;
+}
+
+.pBody .pAd .pDetail .pDetail-Text{
+	padding-bottom: 10px;
+}
+
+.pBody .pAd .pDetail .pDetail-Text p{
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.pBody .pAd .pDetail .pDetail-Text ul{
+}
+
+.pBody .pAd .pDetail .pDetail-ImageList{
+	height: 400px; /*기본으로 보이는 이미지*/
+	overflow: hidden;
+	text-align: center;
+}
+
+.pBody .pAd .pDetail .pDetail-Image{
+}
+
+.pBody .pAd .pDetail .pDetail-Image img{
+/*
+	clip-path: inset(0px 0px 95% 0px);	
+*/
+	width: 100%;
+}
+
+.pBody .pAd .pDetail .pDetail-more{
+	text-align: center;
+	padding: 10px 0 10px 0;	
+}
+
+.pBody .pAd .pDetail .pDetail-more button{
+	width: 200px;
+    height: 50px;
+}
+
+.pReview{
+	padding: 0 0 0 15px;
+	margin-bottom: 50px;
+}
+
+.pReview h4{
+	margin: 10px 0 10px 0;
+}
+
+.pReview .rvBox{
+	margin: 20px 0 0 0;
+}
+
+.pReview .rvBox .rvBox-title{
+	width: 100%;
+    height: 40px;
+    background: black;
+    padding-top: 15px;  
+}
+
+.rvBox-sort{
+	color: white;
+	padding: 0 30px 0 20px;
+	display: inline-block;		
+}
+
+.rvBox-sort button{
+	background: none;
+	color: white;
+}
+
+.rvBox-searchBox{
+	/*
+	background: pink;
+	*/
+	display: inline-block;	
+}
+
+.rvBox-searchBox-search{
+	display: inline-block;
+	padding-right: 30px;
+}
+
+.rvBox-searchBox-search-options{
+	display: inline-block;
+	position: relative;
+}
+
+.rvBox-searchBox-search-options-Btn{
+	position: relative;
+}
+
+#search-option-select{
+	display: inline-block;
+	background: white;
+	width: 80px;
+	padding: 2px;
+	border-bottom: 1px solid black;
+	
+}
+
+.rvBox-searchBox-search-options-Btn .Material-Icons{
+	position: absolute;
+    right: 4px;
+    top: 3px;	
+}
+
+.rvBox-searchBox-search-options-list{
+	display: none;
+	position: absolute;
+	z-index: 1;
+}
+
+.rvBox-searchBox-search-options-list div{
+	background: white;
+	width: 80px;
+	padding: 2px;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.rvBox-searchBox-search-textBox{
+	display: inline-block;
+	position: relative;	
+}
+
+#searchText{
+	padding-left: 10px;
+}
+
+.rvBox-searchBox-search-textBox .Material-Icons{
+	position: absolute;
+	right: 10px;
+	top: 2px;
+}
+
+.rvBox-searchBox-stars{
+	display: inline-block;
+	position: relative;
+}
+
+.rvBox-searchBox-stars-Btn{
+	position: relative;
+}
+
+.rvBox-searchBox-stars-Btn .Material-Icons{
+	position: absolute;
+	right: 2px;
+	top: 2px;
+}
+
+.rvBox-searchBox-stars .stars{
+	width: 80px;
+	background: white;
+	color: red;
+	display: inline-block;
+	padding-left: 3px;
+}
+
+#stars-Btn{
+	border: 1px  solid black;	
+}
+
+.rvBox-searchBox-stars-list{
+	display: none;
+	position: absolute;
+	left: 1px;
+	z-index: 1;
+}
+
+.rvBox-searchBox-stars-list .ops{
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+/*
+.pReview .rvBox .rvBox-title{
+	width: 100%;
+    height: 40px;
+    background: black;
+    background: rgba(0,0,0,0.3);
+    padding-top: 15px;  
+}
+
+.pReview .rvBox .rvBox-title .rvBox-sort{
+	color: white;
+	float: left;
+	padding: 0 30px 0 20px;		
+}
+
+.pReview .rvBox .rvBox-title .rvBox-sort button{
+	background: none;
+	color: white;
+	font-size: 12px;
+}
+
+.pReview .rvBox .rvBox-title .rvBox-sort span{
+}
+
+.pReview .rvBox .rvBox-title .rvBox-search{
+	float: left;
+	padding-right: 10px;
+	position: relative;
+}
+
+.pReview .rvBox .rvBox-title .rvBox-search input{
+	width: 180px;
+    padding-left: 10px;
+}
+
+#rvBox-search-type{
+	width: 60px;
+	
+}
+
+#rvBox-search-type-list{
+	width: 60px;
+}
+
+.search-type-list{
+	
+}
+
+#rvBox-search-type-list input{
+	width: 60px;
+}
+
+
+.search_icon{
+	font-family : 'Material Icons';	
+	font-size: 20px;
+	position: absolute;
+	right: 15px;
+    top: -3px;
+	
+}
+
+.pReview .rvBox .rvBox-title .rvBox-starSelcetBtn{
+	width: 130px;
+	width : 5px;
+	
+	height: 22px;
+	background: white;
+	float: left;
+}
+
+
+*/
+
+.pReview .rvBox .rvBox-list{
+	padding: 20px 0 15px 0px;
+}
+
+.pReview .rvBox .rvBox-list .rvBox-article{
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+	margin-top: 15px;
+	padding-left: 5px;
+}
+
+
+.pReview .rvBox .rvBox-list .rvBox-article .profileImg{
+	width: 40px;
+	height: 40px;
+	clip-path: circle(19px);	
+	margin-right: 15px;
+	border: 1px solid grey;
+	float: left;
+}
+
+.pReview .rvBox .rvBox-list .rvBox-article span{
+	float: left;
+	font-weight: bold;
+}
+
+.pReview .rvBox .rvBox-list .rvBox-article .rvBox-article-info{
+	position: relative;
+}
+
+.pReview .rvBox .rvBox-list .rvBox-article-info .starBox{
+	height: 20px;
+	float: left;
+	position: absolute;
+	top: 20px;
+    left: 57px;
+}
+
+.pReview .rvBox .rvBox-list .rvBox-article-info .starBox .star {
+	position: relative;
+	color: #ddd;
+}
+
+.pReview .rvBox .rvBox-list .rvBox-article-info .starBox .star .hiddenStar{
+	color: red;
+	position: absolute; 
+	left: 0;
+    width: 0;
+    overflow: hidden;
+    pointer-events: none;    	
+}
+
+.pReview .rvBox .rvBox-list .rvBox-article-info .starBox .star input{
+    width: 100%;
+    height: 100%;
+	position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.pReview .rvBox .rvBox-list .rvBox-article-info .proName{
+	clear: both;
+	padding: 5px 0px 5px 0;
+	color: grey;
+}
+
+.pReview .rvBox .rvBox-list .rvBox-article-imgList{
+	margin: 15px 0 15px 0;
+}
+
+.pReview .rvBox .rvBox-list .rvBox-article-imgList img{
+	width: 50px; height: 50px;
+	margin-right: 3px;
+	background: yellowgreen;
+}
+
+.pReview .rvBox .rvBox-article-content .rvBox-article-content-title{
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.pReview .rvBox .rvBox-article-content .rvBox-article-content-text{
+	margin-bottom: 15px;
+}
+
+.pReview .rvBox .rvBox-list .rvBox-article-day{
+	margin-bottom: 15px;
+	color: grey;
+}
+
+.pQA{ /*상품문의*/
+	padding-left:15px;
+	margin-bottom: 30px;
+}
+
+.pQA .qaBox{
+	border: 1px solid grey;
+    border-radius: 5px;
+    padding: 10px 10px 30px 10px;
+}
+.pQA .qaBox .qaBox-title{
+	position: relative;
+    padding-bottom: 15px;
+    border-bottom: 2px solid grey;
+}
+.pQA .qaBox .qaBox-title h4 {
+	height: 40px;
+    line-height: 40px;	
+}
+.pQA .qaBox .qaBox-title a {
+	position: absolute;
+	top: 7px;
+    right: 15px;
+    border: 1px solid grey;
+    padding: 3px;
+    border-radius: 7px;
+}
+.pQA .qaBox .qaBox-title .qaBox-notice {}
+.pQA .qaBox .qaBox-title .qaBox-notice ul{}
+.pQA .qaBox .qaBox-title .qaBox-notice li{
+	font-size: 10px;
+	padding-bottom: 3px;	
+}
+.pQA .qaBox .qaBox-list{
+	padding: 10px 0 15px 0;
+}
+.pQA .qaBox .qaBox-article{}
+.pQA .qaBox .qaBox-article-ask{
+	padding: 10px 0 15px 0;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+	position: relative;
+}
+.pQA .qaBox em{
+    font-size: 5px;
+    background-color: grey;
+    color: white;
+    padding: 2px;
+    margin-left: 5px; 
+}
+.pQA .qaBox strong{
+	font-size: 10px;
+}
+.pQA .qaBox .qaBox-article-ask span{
+	font-size: 10px;
+	color: grey;
+	position: absolute;	
+	top: 13px; right: 10px;
+}
+.pQA .qaBox p{
+	font-size: 10px;
+	padding: 5px 0 0 33px;
+}
+/*
+.material-symbols-outlined{
+	font-family : 'Material Icons';
+	padding-left: 5px;	
+}
+*/
+.pQA .qaBox .qaBox-article-answer{
+	padding: 10px 0 15px 0;
+	position: relative;
+	background: rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.pQA .qaBox .qaBox-article-answer span.qaBox-article-answer-day{
+	font-size: 10px;
+	color: grey;
+	position: absolute;	
+	top: 13px; right: 10px;
+}
+.pQA .qaBox .qaBox-article-answer p{
+	padding-left: 56px;
+}
+
+.pQA .proBottom, .pReview .proBottom{
+	/*
+	padding-bottom: 20px;
+    border-bottom: 2px solid grey;	
+	*/
+}
+
+#RVpaging, #QApaging{
+	font-size: 15px;
+	padding-top: 0;
+}
+
+
+
+#RVpaging span, #QApaging span{
+	padding: 5px;
+}
+
+.noPage{
+	font-size: 12px;
+}
+
+.pEct{
+	padding-left: 15px;
+}
+.pEct .EctBox li{
+	font-size: 10px;
+}
+.pEct .EctBox table{
+	width: 100%;
+	margin: 15px 0 40px 0;
+
+}
+.pEct .EctBox table th{
+	padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    background-color: #fafafa;
+    
+}
+
+.pEct .EctBox table td{
+	padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.ops:hover{
+	background-color: rgb(226, 226, 226);
+}

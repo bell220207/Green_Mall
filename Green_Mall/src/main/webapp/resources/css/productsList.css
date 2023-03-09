@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+/*추가아*/
+
+#pro{
+	/*
+	background-color: yellow;	
+	*/
+	/*잠깐만~*/
+	/* height: 90%;	*/
+}
+
+.proBox{
+	/*
+	background-color: yellow;
+	height: 100%;
+	*/
+}
+
+.proBox #proNav{
+	/*
+	background-color: blue;
+	height: 100%;	
+	*/
+	width: 20%;
+	float:left;
+/*	
+	display: inline-block;
+	border-right: 1px solid #8080806e;	 
+*/
+}
+
+
+.proBox #proNav .navLine {
+	/*
+	background-color: green;	
+	*/
+	padding: 10px 0 10px 0;
+	border-bottom: 1px solid #8080806e;
+}
+
+	
+.proBox #proNav label {
+	/*
+	background-color: pink;
+	*/
+	font-size: 17px;
+	height: 30px;
+	line-height: 30px;
+	padding: 2px 0 2px 5px;
+}
+
+.proBox #proNav label a {
+	font-weight: bold;
+	color: #6ba971;
+}
+
+.proBox #proNav ol{
+	/*
+	background-color: purple;
+	*/
+
+	padding-left: 15px;
+    font-size: 13px;
+}
+
+.proBox #proNav ol li{
+	/*
+	background-color: white;
+	*/
+	padding: 5px 0 5px 0px;
+}
+
+.proBox .proCont{
+	width: 79%;
+	/*잠깐만~*/
+	/*
+	height: 100%;
+	*/
+	float:left;
+/*	
+	background-color: orange; 
+*/
+	overflow: hidden;
+}
+
+.proBox .proCont .proUp{
+	min-height: 850px;
+}
+
+.noProduct{
+	display: block;
+    text-align: center;
+}
+.proBox .proCont .proUp .proColumn{
+	/*
+	background-color: pink;	
+	border: 0.3px solid #80808036;	
+	*/	
+
+	width:29%;
+	/*
+	height: 30%;
+	*/
+	height: 240px;
+	margin: 0 0 15px 15px; 
+    padding: 5px 5px 0 5px;	
+	float: left;
+
+}
+
+.proBox .proCont .proUp .proColumn:hover{
+	/*
+	border: 0.1px solid #8080802e;
+	*/
+	background-color: rgba(0,0,0,0.1);
+}
+
+.proBox .proCont .proUp .proColumn a{
+	
+}
+
+.proBox .proCont .proUp .proColumn a img{
+	width: 100%;
+	height: 70%;	
+}
+
+.proBox .proCont .proUp .proColumn a h3{
+	margin: 5px 0 5px 0px;
+}
+
+.proBox .proCont .proUp .proColumn a p{
+	color: red;
+	font-size: 15px;
+}
+
+.proBox .proCont .proBottom{
+	clear: both;
+
+}
+
+.proBox .proCont .proBottom .paging{
+	text-align: center;
+	font-size: 20px;
+	
+}
+
+.paging-active{
+	font-weight: bold;	
+}
+
+.proBox .proCont .proBottom .paging .page {}
+
+.proBox #proFoot{
+	clear:both;
+}

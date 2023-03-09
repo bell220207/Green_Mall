@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias alias="UserDto" type="com.cmp.port.domain.UserDto"/>
+        <typeAlias alias="ProductDto" type="com.cmp.port.domain.ProductDto"/>
+        <typeAlias alias="QADto" type="com.cmp.port.domain.QADto"/>
+        <typeAlias alias="RvDto" type="com.cmp.port.domain.RvDto"/>
+    </typeAliases>
+</configuration>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cmp.port.dao.ProMapper">
+
+    <select id="getList" resultType="ProductDto">
+        select * from products
+    </select>
+    
+    <select id="searchResultCnt" resultType="int">
+    	select count(*) from products 
+    	where pro_title like '%' ||  #{keyword} || '%'
+    	and
+		category like '%' ||  #{category} || '%'
+    	and
+		sub_cate like '%' ||  #{sub_cate} || '%'
+    </select>
+    
+    <select id="getSearchResultPage" resultType="ProductDto">
+		select * from 
+		(
+		    select rownum as rnum, products.* from 
+			    (
+			        select * from products
+			        where 
+			        	pro_title like '%' ||  #{keyword} || '%'
+			        	and
+			        	category like '%' ||  #{category} || '%'
+			        	and
+						sub_cate like '%' ||  #{sub_cate} || '%'
+				<choose>
+	            	<when test='searchOption=="H"'>
+	            		order by bno desc
+	            	</when>	
+			        <otherwise>
+			        	order by bno asc
+			        </otherwise>
+		    	</choose>
+			        
+			    ) products <![CDATA[where rownum <= #{page}*#{pageSize}]]>
+		) <![CDATA[where rnum > #{offset}]]>
+		
+    </select>
+    
+	<select id="getProductInfo" resultType="ProductDto" parameterType="ProductDto">
+		select a.*
+		from products a
+		where
+		    a.pro_title like #{pro_title}
+		ORDER BY bno asc
+	</select>
+	
+	<select id="getProductImgInfo" resultType="String" parameterType="ProductDto">
+		select b.proInfo_img 
+			from 
+			    products a, proInfoImgList b
+			    where
+			    a.pro_title = b.pro_title
+			    and
+			    a.pro_title like #{pro_title}
+	</select>
+	
+	<!-- optionlist -->
+	<select id="getOptionsList" resultType="String" parameterType="ProductDto">
+		select b.options 
+			from 
+			    products a, optionlist b
+			    where
+			    a.pro_title = b.pro_title
+	            and
+	            a.pro_title like #{pro_title}
+	</select>
+	
+	<select id="getQList" resultType="QADto" parameterType="map">
+		
+		select * from 
+		(
+		    select rownum as rnum, qa.* from (
+		        select
+		            'Q' as qa_type
+		            , a.qno as qano
+		            , a.id as writer
+		            , a.q_text as text
+		            , a.q_date as reg_date
+		        from qlist a
+		        where a.pro_title like #{proDto.pro_title}
+		        
+		        union all
+		        
+		        select
+		            'A' as qa_type
+					, b.qno as qano
+		            , b.manager_id as writer
+		            , b.r_text as text
+		            , b.r_date as reg_date
+		        from alist b
+		        where b.pro_title like #{proDto.pro_title}
+		        ORDER BY qano desc, reg_date asc
+		    ) qa <![CDATA[ where rownum <= #{sc.page}*#{sc.pageSize}]]>
+		) <![CDATA[where rnum > #{sc.offset}]]>
+		
+	</select>
+	
+	<!-- Q&A 갯수 -->
+	<select id="QAlistCnt" resultType="int" parameterType="ProductDto">
+		select SUM (T.cnt) 
+		from(
+		    (select count (*) as cnt
+		        from (
+		            select * from qlist a
+		            where
+		            a.pro_title like #{pro_title}
+		        )
+		    )
+		     
+		    UNION ALL
+		    
+		    (select count (*) as cnt
+		        from (
+		            select * from alist b
+		            where
+		            b.pro_title like #{pro_title}
+		        )
+		     )
+		)T
+    </select>
+    
+    <select id="getRVlist" resultType="RvDto" parameterType="map">
+		select * from 
+		(
+		    select rownum as rnum, rv.* from (
+		        select 
+		            b.id, 
+		            b.rno, 
+		            b.stars,
+		            b.pro_title,
+		            b.rv_title,
+		            b.rv_text,
+		            b.rv_date,
+		            a.profileimg
+		        from userInfo a, RVlist b
+		        where 
+		        	b.pro_title like #{proDto.pro_title}
+            		and
+            		b.stars like '%'||#{rvDto.stars}||'%'
+            		<include refid="rvSearchCondition"/>
+            	<choose>
+	            	<when test='rvDto.lineUp=="date"'>
+	            		order by b.rv_date desc, b.stars desc 
+	            	</when>	
+			        <otherwise>
+			        	order by b.stars desc, b.rv_date desc
+			        </otherwise>
+		    	</choose>
+		    
+		    ) rv <![CDATA[ where rownum <= #{sc.page}*#{sc.pageSize} ]]>
+		) <![CDATA[ where rnum > #{sc.offset} ]]> 
+    </select>
+    
+    <select id="getRVimgList" resultType="String" parameterType="RvDto">
+		select a.img_list 
+		from 
+		    RV_iMG_list a, RVlist b
+		    where
+		    a.rno = b.rno
+		    and
+		    a.rno = #{rno}
+    </select>
+    
+	
+	<select id="RVlistCnt" resultType="int" parameterType="map">
+    	select count (*) from RVlist b
+    		where 
+    			b.stars like '%'||#{rvDto.stars}||'%'
+    		<include refid="rvSearchCondition"/>
+    </select>
+    
+    <sql id="rvSearchCondition">
+		<choose>
+           	<when test='sc.searchOption=="W"'>
+           		and b.id like '%' ||  #{sc.keyword} || '%'
+           	</when>
+           	<when test='sc.searchOption=="T"'>
+           		and b.rv_title like '%' ||  #{sc.keyword} || '%'
+           	</when>
+           	<when test='sc.searchOption=="C"'>
+           		and b.rv_text like '%' ||  #{sc.keyword} || '%'
+           	</when>
+           	<otherwise>
+           		and(
+           			b.id like '%' ||  #{sc.keyword} || '%'
+           			or
+           			b.rv_title like '%' ||  #{sc.keyword} || '%'
+           			or
+           			b.rv_text like '%' ||  #{sc.keyword} || '%'
+           		)
+           	</otherwise>
+		</choose>
+   	</sql>
+    
+</mapper>

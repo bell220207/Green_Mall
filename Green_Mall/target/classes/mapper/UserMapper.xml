@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cmp.port.dao.UserMapper">
+    <select id="login" resultType="UserDto" parameterType="UserDto">
+        select * from userInfo where id=#{id} and pwd=#{pwd}
+    </select>
+    
+    <insert id="register" parameterType="UserDto">
+        insert into userInfo
+            (id, pwd, name, email, birth, idCheck)
+        values
+            (#{id}, #{pwd}, #{name}, #{email}, #{birth}, #{idCheck})
+    </insert>
+    
+    <select id="idCheck" resultType="UserDto" parameterType="UserDto">
+        select * from userInfo where id=#{id}
+    </select>
+</mapper>

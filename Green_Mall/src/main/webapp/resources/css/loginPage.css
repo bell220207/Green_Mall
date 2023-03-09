@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+
+.cont #loginBox{
+    width:50%;
+    /*
+    height: 70%;
+    */
+    height: 500px;
+    border: 1px solid grey;
+    border-radius: 15px;
+}
+
+#loginBox #msg{
+	text-align: center;
+	font-size: 15px;
+	color: red;
+	margin-bottom: 30px;
+}
+
+#loginBox input[type='text'], #loginBox input[type='password'], 
+#loginBox button[type='submit']{
+    display: block;
+    width: 270px;
+    height: 40px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+#loginBox button[type='submit']{
+    width: 280px;
+    height: 50px;
+    margin-top: 20px;
+    padding-left: 0px;
+    font-size: 15px;
+}
+
+#loginBox #Box_bt{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-Login{
+	text-align: center;
+}
+
+.social-Login-kakao{
+	background: #fee500;
+	width: 78%;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #2e2e2e;
+    font-weight: bold;
+    
+}

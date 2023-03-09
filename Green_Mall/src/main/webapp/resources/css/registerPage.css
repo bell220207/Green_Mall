@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+
+.cont #regBox{
+    width:60%; 
+    border: 1px solid grey;
+    border-radius: 15px;
+}
+
+#regBox #msg{
+	text-align: center;
+	color: red;
+	font-size: 15px;
+    margin-bottom: 20px;
+}
+
+#regBox label{
+    display: block;
+    margin: 0 0 5px 83px;
+    font-size: 15px;
+}
+
+#regBox input[type='text'], #regBox input[type='password'],
+#regBox input[type='date'], #test a, #regBox button[type='submit']{
+    display: block;
+    width: 270px;
+    height: 40px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+#regBox #check{
+	position: relative;
+}
+
+#regBox #idCheckBtn{
+	width: 30px;
+	height: 40px;
+	padding: 2px 2px 0px 5px;
+	border: 1px solid black;
+	font-size:13px;
+	position: absolute;
+	right: 35px;
+	top:0;
+}
+
+#regBox button[type='submit']{
+    width: 280px;
+    height: 50px;
+    margin-top: 30px;
+    padding-left: 0px;
+    font-size: 15px;
+
+}
+

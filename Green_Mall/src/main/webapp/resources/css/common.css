@@ -1,0 +1,125 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+*{padding: 0; margin: 0;}
+
+.Material-Icons{
+	font-family : 'Material Icons';	
+}
+
+#wrap{
+	/*잠깐만~*/
+    /* height: 1000px; */
+    margin-top: 20px;
+
+}
+#header{
+    /* background: pink; */
+    height: 60px;
+}
+#header #header-top{
+	height: 100%;
+    border-bottom: 1px solid #eee;
+}
+#header #header-top #logo{
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 2px;
+    font-size: 35px;
+    line-height: 45px;
+    display: inline-block;
+}
+
+#logo a{
+	color: #6ba971;
+}
+
+#header #header-top .search{
+    display: inline-block;
+    /*visibility: hidden; 추가*/
+    visibility: hidden;
+    margin: 0 20px 0 10px;
+}
+#header #header-top .search input{
+    width:320px;
+    height: 35px;
+    border-radius: 13px;
+    padding-left: 10px;
+}
+#header #header-top #header_menu{
+    display: inline-block;
+    font-size: 15px;
+}
+
+#header #header-top #header_menu ul{
+	width: 225px;
+	font-size: 17px;
+}
+
+#header #header-top #header_menu li{
+	display: inline-block;
+	width:70px;
+	text-align: center;
+}
+
+
+#header #header-top #header_menu a{
+
+}
+
+/*=======================================*/
+
+.contents{
+	/*
+    height: 70%;
+    */
+    margin: 50px 0 50px 0;
+    min-height: 800px;
+}
+
+.cont{
+	/*잠깐만~!*/
+	/*
+    height: 100%;
+    */
+}
+
+.cont #logo{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 30px;
+    margin: 30px 0 30px 0;
+}
+
+/*=======================================*/
+#footer{ 
+    height: 150px;
+    border-top: 1px solid #eee;
+}
+.ft{
+    text-align: center;
+    padding-top: 25px;
+}
+.ft ul{ margin-bottom: 20px; }
+.ft li{
+    position: relative;
+    display: inline;
+    padding: 0 7px 0 10px;
+}
+.ft li:before{
+    content: ''; width:1px; height: 12px; background: #ccc; 
+    position: absolute; left:0; top:2px;
+}
+.ft li:first-child:before{ width: 0; height: 0; }
+.container{
+	/*
+	background-color: rgba(0, 0, 0, 0.3);
+    */
+    width: 750px;
+    min-width: 500px;
+    /*잠깐만~!*/
+    /*
+    height: 100%;
+    */
+    margin: 0 auto;
+}
