@@ -1,11 +1,14 @@
 
-if(msg=="REG_ERR") {
-	alert("가입에 실패했습니다.");
-}
-if(msg=='REG_OK'){ 
-	console.log("가입에 성공했습니다");
-	alert("가입에 성공했습니다."); 
-};
+if(msg=="REG_ERR") { alert("가입에 실패했습니다."); }
+if(msg=='REG_OK'){   alert("가입에 성공했습니다."); };
+if(msg=='READ_ERR'){ alert("삭제되거나 존재하지 않는 게시물입니다."); };
+if(msg=='LIST_ERR'){ alert("문의 페이지에 접속할 수 없습니다."); };
+if(msg=='DEL_OK'){ alert("삭제 성공했습니다."); };
+if(msg=='DEL_ERR'){ alert("삭제에 실패했습니다."); };
+if(msg=='MOD_OK'){ alert("수정에 성공했습니다."); };
+if(msg=='MOD_ERR'){ alert("수정에 실패했습니다."); };
+if(msg=='WRT_OK'){ alert("등록에 성공했습니다."); };
+if(msg=='WRT_ERR'){ alert("등록에 실패했습니다."); };
 
 function showList(){
 	var nav = document.querySelector("#nav");
@@ -77,4 +80,20 @@ function idCheck(){
             console.log(error)
         }
     });	        
+}
+
+function dropdown(clickedBtn){
+	alert("dropdown()");
+    console.log("clickedBtn: ")
+    console.log(clickedBtn);
+    
+    var dropdownClass = $(clickedBtn).next("div").attr("class");
+    console.log("dropdownClass: ")
+    console.log(dropdownClass);
+	
+	var dropdownBox = document.querySelector('.'+dropdownClass);	
+	console.log("===dropdownBox===")
+	console.log(dropdownBox);
+	
+	$(dropdownBox).toggle();
 }

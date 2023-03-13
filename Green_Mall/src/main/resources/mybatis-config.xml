@@ -4,9 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias alias="UserDto" type="com.cmp.port.domain.UserDto"/>
-        <typeAlias alias="ProductDto" type="com.cmp.port.domain.ProductDto"/>
-        <typeAlias alias="QADto" type="com.cmp.port.domain.QADto"/>
-        <typeAlias alias="RvDto" type="com.cmp.port.domain.RvDto"/>
+        <typeAlias alias="UserDto" type="com.cmp.Green_Mall.domain.UserDto"/>
+        <typeAlias alias="ProductDto" type="com.cmp.Green_Mall.domain.ProductDto"/>
+        <typeAlias alias="QADto" type="com.cmp.Green_Mall.domain.QADto"/>
+        <typeAlias alias="RvDto" type="com.cmp.Green_Mall.domain.RvDto"/>
     </typeAliases>
 </configuration>

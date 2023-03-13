@@ -4,7 +4,6 @@
 <style>
    	#header #header-top .search{ visibility: visible; }
 </style>
-<script src="<c:url value='/js/main.js'/>" ></script>
 <script>
 	var ct = "${ph.sc.category}";
 	var sub_ct = "${ph.sc.sub_cate}";
@@ -78,7 +77,7 @@
 	                    	</c:if>
 	                    	</div> <!-- proUp -->
 	                    	
-	                    	<div class="proBottom">
+	                    	<div class="paging-container">
 	                    		<div class="paging" id="pListPaging">
 	                    		<c:if test="${ph.totalCnt!=null && ph.totalCnt!=0}">
 	                    			<c:if test="${ph.showPrev=='true'}">

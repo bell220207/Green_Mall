@@ -11,7 +11,7 @@
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven validator="globalValidator"/> 
-	<beans:bean id="globalValidator" class="com.cmp.port.domain.GlobalValidator" />
+	<beans:bean id="globalValidator" class="com.cmp.Green_Mall.domain.GlobalValidator" />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<!--  
@@ -34,7 +34,7 @@
 	<beans:property name="defaultEncoding" value="UTF-8"/>
 </beans:bean>
 	
-	<context:component-scan base-package="com.cmp.port" />
+	<context:component-scan base-package="com.cmp.Green_Mall" />
 	
 	<!--  
 	<context:component-scan base-package="com.cmp.port.controller" />

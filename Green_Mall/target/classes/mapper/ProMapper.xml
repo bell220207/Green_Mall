@@ -144,6 +144,8 @@
 		        	b.pro_title like #{proDto.pro_title}
             		and
             		b.stars like '%'||#{rvDto.stars}||'%'
+            		and
+		            a.id like b.id
             		<include refid="rvSearchCondition"/>
             	<choose>
 	            	<when test='rvDto.lineUp=="date"'>
@@ -198,5 +200,6 @@
            	</otherwise>
 		</choose>
    	</sql>
+   	
     
 </mapper>

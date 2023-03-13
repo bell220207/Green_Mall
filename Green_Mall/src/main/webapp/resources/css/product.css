@@ -593,12 +593,7 @@
 	font-size: 10px;
 	padding: 5px 0 0 33px;
 }
-/*
-.material-symbols-outlined{
-	font-family : 'Material Icons';
-	padding-left: 5px;	
-}
-*/
+
 .pQA .qaBox .qaBox-article-answer{
 	padding: 10px 0 15px 0;
 	position: relative;
@@ -615,19 +610,10 @@
 	padding-left: 56px;
 }
 
-.pQA .proBottom, .pReview .proBottom{
-	/*
-	padding-bottom: 20px;
-    border-bottom: 2px solid grey;	
-	*/
-}
-
 #RVpaging, #QApaging{
 	font-size: 15px;
 	padding-top: 0;
 }
-
-
 
 #RVpaging span, #QApaging span{
 	padding: 5px;

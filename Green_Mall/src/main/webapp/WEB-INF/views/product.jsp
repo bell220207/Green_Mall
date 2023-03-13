@@ -5,7 +5,6 @@
    	#header #header-top .search{ visibility: visible; }
    	#wrap{ height: unset; }
 </style>
-<script src="<c:url value='/js/main.js'/>" ></script>
 <script src="<c:url value='/js/productPage.js'/>" ></script>
 <%@include file="include/header.jsp"%>       
         <div class="contents" id="proCt">
@@ -211,7 +210,7 @@
 											
 											<div class="rvBox-list" id="rvBox-list">
 											</div> <!-- rvBox-list -->
-											<div class="proBottom">
+											<div class="paging-container">
 												<div class="paging" id="RVpaging">
 												</div>
 											</div>
@@ -223,7 +222,7 @@
 										<div class="qaBox">
 											<div class="qaBox-title">
 												<h4>상품문의</h4>
-												<a href="#">문의하기</a>
+												<a href="<c:url value="/QAmyDetailPage/write?pro_title=${list.pro_title}"/>">문의하기</a>
 												<div class="qaBox-notice">
 													<ul>
 														<li>- 상품문의 및 후기게시판을 통해 취소나 환불, 반품 등은 처리되지 않습니다.</li>
@@ -235,7 +234,7 @@
 												
 											<div class="qaBox-list" id="qaBox-list">
 											</div>
-											<div class="proBottom">
+											<div class="paging-container">
 												<div class="paging" id="QApaging">
 												</div> <!-- paging -->
 											</div> <!-- proBottom -->

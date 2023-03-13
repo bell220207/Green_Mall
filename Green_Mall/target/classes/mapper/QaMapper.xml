@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cmp.port.dao.QaMapper">
+
+	<select id="getQAmyListPage"  parameterType="map" resultType="QADto">
+		select * from 
+		(
+		    select rownum as rnum, q.* from (
+		        select
+		            'Q' as qa_type
+		            , a.qno as qano
+		            , a.id as writer
+                    , a.pro_title as pro_title
+		            , a.q_text as text
+		            , a.q_date as reg_date
+		        from qlist a
+		        where id like #{user.id}
+		        order by qano desc
+		    ) q <![CDATA[ where rownum <= #{sc.page}*#{sc.pageSize} ]]>
+		) <![CDATA[ where rnum > #{sc.offset} ]]>
+	</select>
+
+	<select id="getQAmyListCnt" resultType="int" parameterType="UserDto">
+		select count (*) from qlist 
+    	where id like #{id}
+	</select>
+
+	<select id="readQA" resultType="QADto" parameterType="QADto">
+		select
+			'Q' as qa_type
+            , a.qno as qano
+            , a.id as writer
+            , a.pro_title as pro_title
+            , a.q_text as text
+            , a.q_date as reg_date
+		from qlist a
+    	where qno=#{qano} and id like #{writer}
+	</select>
+	
+	<delete id="removeQA" parameterType="QADto">
+		delete from qlist where qno=#{qano} and id = #{writer}
+	</delete>
+
+	<update id="modifyQA" parameterType="QADto">		
+		update qlist
+		    set
+		    q_text=#{text}, 
+		    q_date= (SELECT TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS') FROM DUAL)
+		where qno=#{qano} and id like #{writer}
+		
+	</update>
+	
+	<insert id="insertQA" parameterType="QADto">
+		insert 
+	    INTO qlist (qno, id, pro_title, q_text, q_date) 
+	    VALUES (
+	        Qlist_seq.NEXTVAL, 
+	        #{writer}, 
+	       	#{pro_title}, 
+	        #{text}, 
+	        TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS')
+	    )
+	</insert>
+	
+	<select id="CmtCnt" parameterType="Integer" resultType="Integer">
+		select count (*) from alist where qno = #{qano}
+   	</select>
+   	
+   	<select id="getCmt" parameterType="Integer" resultType="QADto">
+   		select
+		    'A' as qa_type
+		    , qno as qano
+		    , manager_id as writer
+		    , pro_title as pro_title
+		    , r_text as text
+		    , r_date as reg_date
+		from alist
+		where qno = #{qano}
+   	</select>
+   	
+   	<insert id="wrtCmt" parameterType="QADto">
+	   	insert 
+		INTO alist (qno, id, pro_title, manager_id, r_text, r_date) 
+		VALUES (
+		    #{qano}, 
+		    #{writer}, 
+		    #{pro_title}, 
+		    'manager',
+		    #{text},
+		    TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS')
+		)
+   	</insert>
+
+</mapper>

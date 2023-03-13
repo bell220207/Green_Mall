@@ -3,18 +3,9 @@
 
 *{padding: 0; margin: 0;}
 
-.Material-Icons{
-	font-family : 'Material Icons';	
-}
-
-#wrap{
-	/*잠깐만~*/
-    /* height: 1000px; */
-    margin-top: 20px;
-
-}
+.Material-Icons{ font-family : 'Material Icons'; }
+#wrap{ margin-top: 20px; }
 #header{
-    /* background: pink; */
     height: 60px;
 }
 #header #header-top{
@@ -29,9 +20,7 @@
     display: inline-block;
 }
 
-#logo a{
-	color: #6ba971;
-}
+#logo a{ color: #6ba971; }
 
 #header #header-top .search{
     display: inline-block;
@@ -61,26 +50,40 @@
 	text-align: center;
 }
 
-
-#header #header-top #header_menu a{
-
+.My{
+	position: relative;
 }
+
+.myBox{
+	display: none;
+	background: white;
+	width: 100px;
+	margin-top: 5px;
+	font-size: 13px;
+	text-align: center;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-bottom: none;
+	position: absolute;
+	right: -15px;
+}
+
+.myBox div{
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+	padding: 5px;
+}
+
+.myBox div:hover{ background: rgba(0, 0, 0, 0.1); }
+
+.myBox a {display: block;}
 
 /*=======================================*/
 
 .contents{
-	/*
-    height: 70%;
-    */
     margin: 50px 0 50px 0;
     min-height: 800px;
 }
 
 .cont{
-	/*잠깐만~!*/
-	/*
-    height: 100%;
-    */
 }
 
 .cont #logo{
@@ -112,14 +115,13 @@
 }
 .ft li:first-child:before{ width: 0; height: 0; }
 .container{
-	/*
-	background-color: rgba(0, 0, 0, 0.3);
-    */
     width: 750px;
-    min-width: 500px;
-    /*잠깐만~!*/
-    /*
-    height: 100%;
-    */
+    min-width: 500px
     margin: 0 auto;
+}
+.ellipsis_text{
+	max-width: 99%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }

@@ -433,23 +433,6 @@ function getKeyword(){
 	getRVlist(1, title, lineUp);
 }
 
-
-function dropdown(clickedBtn){
-
-	alert("dropdown()");
-	
-    console.log("clickedBtn: "+clickedBtn);
-    var dropdownClass = $(clickedBtn).next("div").attr("class");
-    
-    console.log("dropdownClass: "+dropdownClass);
-	
-	var dropdownBox = document.querySelector('.'+dropdownClass);	
-	console.log("===dropdownBox===")
-	console.log(dropdownBox);
-	$(dropdownBox).toggle();
-    
-}
-
 function seeMore(){
 	var btState = document.querySelector('#pDetail-Button');
 	console.log(btState.innerText);

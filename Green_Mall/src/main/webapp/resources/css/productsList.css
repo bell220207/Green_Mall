@@ -138,8 +138,15 @@
 	clear: both;
 
 }
-
+/*
 .proBox .proCont .proBottom .paging{
+	text-align: center;
+	font-size: 20px;
+	
+}
+*/
+
+.paging-container .paging{
 	text-align: center;
 	font-size: 20px;
 	
@@ -148,8 +155,6 @@
 .paging-active{
 	font-weight: bold;	
 }
-
-.proBox .proCont .proBottom .paging .page {}
 
 .proBox #proFoot{
 	clear:both;

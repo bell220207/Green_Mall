@@ -5,8 +5,8 @@
 <c:set var="loginId" value="${sessionScope.SessionId}"/>
 <c:set var="loginOutLink" value="${loginId==null ? '/loginPage' : '/login/logout'}"/>
 <c:set var="loginOut" value="${loginId==null ? 'Login' : 'LogOut'}"/>
-<c:set var="RegLink" value="${loginId==null ? '/registerPage' : '/MyPage'}"/>
-<c:set var="Reg" value="${loginId==null ? 'Register' : 'MyPage'}"/>
+<c:set var="RegLink" value="${loginId==null ? '/registerPage' : '#'}"/>
+<c:set var="Reg" value="${loginId==null ? 'Register' : 'My'}"/>
 
 <!DOCTYPE html>
 <html>
@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="<c:url value='/css/loginPage.css?after'/>">   
     <link rel="stylesheet" href="<c:url value='/css/productsList.css?after'/>">    
     <link rel="stylesheet" href="<c:url value='/css/product.css?after'/>"> 
+    <link rel="stylesheet" href="<c:url value='/css/QApage.css?after'/>"> 
     <style> 
         @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Rubik+Mono+One&display=swap');
     </style>
