@@ -44,13 +44,9 @@ function purchaseNum(btn){
 	var btnId = `${btn.id}`;
 	var purchaseNum = $("#purchaseNum").attr('value');
 	purchaseNum = Number(purchaseNum);
-	console.log("bf purchaseNum: "+purchaseNum);
 	
 	var max = $("#purchaseNum").attr('max')==""||$("#purchaseNum").attr('max')==null? 20 : $("#purchaseNum").attr('max');
 	var min = $("#purchaseNum").attr('min')==""||$("#purchaseNum").attr('max')==null? 1 : $("#purchaseNum").attr('min');
-	
-	console.log("max: "+max);
-	console.log("min: "+min);
 	
 	if(btnId == 'up'){
 		if(purchaseNum==max){
@@ -68,23 +64,18 @@ function purchaseNum(btn){
 	}
 	
 	$("#purchaseNum").attr('value', purchaseNum);
-	console.log("af purchaseNum: "+purchaseNum);
-	console.log("===========================");
 }
 
 
 function setLineUp(clickedBtn){
 
 	var BtnId = $(clickedBtn).attr("id");
-	console.log(BtnId);
+
 	if(BtnId=="bestBtn"){
 		lineUp="stars";
 	}else if(BtnId=="dayBtn"){
 		lineUp="date";
 	}
-	
-	console.log("setLineUp title: "+title);
-	console.log("setLineUp lineUp: "+lineUp);
 	
 	getRVlist(1, title, lineUp);
 }
@@ -92,26 +83,12 @@ function setLineUp(clickedBtn){
 /*리뷰 내역 가져오기*/
 function getRVlist(pageNum, proTitle, lineUp){					
 		
-		console.log("getRVlist pageNum: "+pageNum);
-		console.log("getRVlist proTitle: "+proTitle);
-		console.log("getRVlist title!!!: "+title);
-		
-		console.log("getRVlist lineUp: "+lineUp);
-		console.log("getRVlist RVscore: "+RVscore);
-		
-		console.log("getRVlist searchOption: "+searchOption);
-		console.log("getRVlist keyword: "+keyword);		
-		
 		pageNum = String(pageNum);
 		RVscore = String(RVscore);
-		
 		proTitle=title;
 		pNum = pageNum;
-		
-		console.log("================getRVlist==================");
+
 		setData();
-		console.log(data);
-		
 		
 		var RVlistHtml="";
 	    var RvImglistHtml ="";
@@ -129,8 +106,6 @@ function getRVlist(pageNum, proTitle, lineUp){
 	        success : function(data) {
 	        	
 	        	for(var i=0; i<data.length; i++){
-	        		console.log("=================");
-	        		console.log(data[i]);
 	        		var starValue = data[i].stars;
 					RVlistHtml=""; // RVlistHtml 초기화 과정 (for문 안에 있어야 한다)
 	        		RvImglistHtml=""; // RvImglistHtml 초기화 과정
@@ -196,13 +171,10 @@ function getQAlist(pageNum, proTitle){
 	
 	pageNum = String(pageNum);
 	RVscore = String(RVscore);
-	
 	proTitle=title;
 	pNum = pageNum;
 	
-	console.log("================getQAlist==================");
 	setData();
-	console.log(data);	
 	
 	var QaListHtml="";
 	$("#qaBox-list").html(""); // 리스트 초기화
@@ -265,17 +237,7 @@ function proPaging(pageNum, proTitle, type){
 	
 	pType=type;
 
-	console.log("proPaging title!!!: "+title);
-	console.log("proPaging type!!!: "+pType)
-	console.log("proPaging lineUp: "+lineUp);
-	console.log("proPaging RVscore: "+RVscore);
-	
-	console.log("proPaging searchOption: "+searchOption);
-	console.log("proPaging keyword: "+keyword);	
-	
-	console.log("================proPaging=================");
 	setData();
-	console.log(data);
 	
 	$.ajax({
         type: 'POST',
@@ -300,8 +262,6 @@ function proPaging(pageNum, proTitle, type){
 			var type = data.type;
 			
 			if(type=='RV'){
-			//	console.log("rv");
-				console.log("proPaging totalCnt: "+totalCnt);
 				
 				if(totalCnt==0){
 					pagingHtml += '<span class="noPage">등록된 리뷰가 없습니다</span>';
@@ -331,7 +291,6 @@ function proPaging(pageNum, proTitle, type){
 										+ '\' )">&gt;</span>';
 										
 					}
-				//	console.log(pagingHtml);
 					clickedPage = "rv"+pageNum;
 				}
 				
@@ -363,7 +322,6 @@ function proPaging(pageNum, proTitle, type){
 					clickedPage = "qa"+pageNum;
 					
 				}
-				
 				// qa에 추가
 				$("#QApaging").html(pagingHtml);
 			}
@@ -382,17 +340,12 @@ function proPaging(pageNum, proTitle, type){
 
 
 function showMenu(value){
-	console.log("==========showMenu value==========");
-	console.log(value);
-	
 	// 클릭한 값(히든 value값)
 	var selectedValue = $(value).children("input").attr("value");
+
 	// 클릭한 텍스트
 	var selectedText = $(value).children("span").text();
 
-	console.log("==========showMenu selectedMenu==========");	
-	console.log(selectedText);
-	
 	var resultList = $(value).parent().prev().children();
 	resultList[0].innerText = selectedText;
 	
@@ -400,42 +353,24 @@ function showMenu(value){
 	$(value).parent().toggle();
 	
 	var MenuBtn = $(value).parent().prev().attr("id");
-	console.log("MenuBtn: "+MenuBtn);
-	console.log("selectedValue: "+selectedValue);
 	
 	if(MenuBtn=='starsBtn'){
-		console.log("bf RVscore:"+RVscore);
 		RVscore = selectedValue;
-		console.log("af RVscore:"+RVscore);
-		
-		console.log("showMenu title: "+title);
-		console.log("showMenu lineUp: "+lineUp);
 		getRVlist(1, title, lineUp);
 		
 	}else if(MenuBtn=='searchBtn'){
-		console.log("selectedValue:"+selectedValue);
 		searchOption = selectedValue;
-		console.log("showMenu searchOption: "+searchOption);
 	}
-	
-	
 };
 
 
 function getKeyword(){
 	keyword = document.getElementById('searchText').value;
-	console.log("getKeyword 호출");
-	console.log("getKeyword title: "+title);
-	console.log("getKeyword lineUp: "+lineUp);
-	console.log("getKeyword searchOption: "+searchOption);
-	console.log("getKeyword keyword: "+keyword);
-	
 	getRVlist(1, title, lineUp);
 }
 
 function seeMore(){
 	var btState = document.querySelector('#pDetail-Button');
-	console.log(btState.innerText);
 	
 	if(btState.innerText=='더보기'){
 		btState.innerText = '접기';

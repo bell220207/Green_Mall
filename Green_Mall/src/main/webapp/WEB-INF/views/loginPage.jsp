@@ -8,7 +8,7 @@
                     <div id="loginBox">
                         <div id="logo">Campus</div>
                         <!-- form 시작 -->
-                        <form action="<c:url value='/login/login'/>" method="post" onsubmit="return formCheck(this);">
+                        <form action="<c:url value='/login/login'/>" method="post" onsubmit="return loginFormCheck(this);">
                             <div id="msg">
                         		<c:if test="${msg eq 'loginFail'}">
                         			<p>아이디 혹은 비밀번호가 일치하지 않습니다</p>

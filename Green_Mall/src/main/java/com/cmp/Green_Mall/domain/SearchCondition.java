@@ -9,7 +9,6 @@ public class SearchCondition {
 	private String sub_cate="";	
 	private String searchOption="";
 	
-    
     public Integer getPage() { return page; }
     public void setPage(Integer page) { this.page = page; }
     public Integer getPageSize() { return pageSize; }
@@ -25,10 +24,8 @@ public class SearchCondition {
     public String getSub_cate() { return sub_cate; }
 	public void setSub_cate(String sub_cate) { this.sub_cate = sub_cate; }
 	
-	// 추가
 	public String getSearchOption() { return searchOption; }
 	public void setSearchOption(String searchOption) { this.searchOption = searchOption; }
-	
 	
 	// 기본 생성자
     public SearchCondition(){};
@@ -63,21 +60,5 @@ public class SearchCondition {
 		return "SearchCondition [page=" + page + ", pageSize=" + pageSize + ", keyword=" + keyword + ", category="
 				+ category + ", sub_cate=" + sub_cate + ", searchOption=" + searchOption + "]";
 	}
-    
-    /*
-    @Override
-    public String toString() {
-        return "SearchCondition{" +
-                "page=" + page +
-                ", pageSize=" + pageSize +
-                ", offset=" + getOffset() +
-                ", keyword='" + keyword + '\'' +
-                ", category='" + category + '\'' +
-                ", sub_cate='" + sub_cate + '\'' +                
-//                ", option='" + option + '\'' +
-                '}';
-    }
-    */
-    
     
 }

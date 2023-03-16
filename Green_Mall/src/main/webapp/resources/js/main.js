@@ -23,7 +23,7 @@ function showList(){
 }
 
 
-function formCheck(frm) {
+function loginFormCheck(frm) {
 	
 	let id = frm.id.value;
 	let pwd = frm.pwd.value;
@@ -49,7 +49,7 @@ function idCheck(){
 	console.log("result: "+result)
  	
 	if(userid==""||userid==null){
-		alert("빈칸");
+		alert("아이디를 입력해주세요.");
 		return;
 	}
 	else if(userid.length<5 || userid.length>12){
@@ -68,7 +68,6 @@ function idCheck(){
         dataType : 'text',
         data : JSON.stringify({id: userid}),
         success : function(data) {
-			console.log(data);
 			if(data=="idCk_ok"){
 				alert("사용할 수 있는 아이디 입니다");
 				$('input[name=idCheck]').val("true");
@@ -83,17 +82,7 @@ function idCheck(){
 }
 
 function dropdown(clickedBtn){
-	alert("dropdown()");
-    console.log("clickedBtn: ")
-    console.log(clickedBtn);
-    
     var dropdownClass = $(clickedBtn).next("div").attr("class");
-    console.log("dropdownClass: ")
-    console.log(dropdownClass);
-	
 	var dropdownBox = document.querySelector('.'+dropdownClass);	
-	console.log("===dropdownBox===")
-	console.log(dropdownBox);
-	
 	$(dropdownBox).toggle();
 }

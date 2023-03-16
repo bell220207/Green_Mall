@@ -47,7 +47,6 @@
         </div>
 
         <div id="banner">
-            <!-- <div class="container"></div> -->
             <img src="img/ban01.jpg" width="1200px" height="400px">
         </div> <!-- banner -->
         

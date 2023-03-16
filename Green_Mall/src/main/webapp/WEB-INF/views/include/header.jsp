@@ -11,7 +11,6 @@
 	                        <input type="text" name="keyword" placeholder="검색어 입력">
 	                    </form>
                     </div>
-                    
                     <div id="header_menu">
                     	<ul>
 	                    	<li><a href='<c:url value="${loginOutLink}"/>' >${loginOut}</a></li>
@@ -28,11 +27,7 @@
 		                        		<div><span><a href="<c:url value="/QAmyListPage"/>" >문의내역</a></span></div>
 		                        	</div>
 	                        	</c:if>
-	                        	
 	                        </li>
-	                        
-	                        
-	                        
 	                        <li id="li_last"><a href='<c:url value=""/>' >Cart</a></li>
                     	</ul>
                     </div>

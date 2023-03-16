@@ -32,14 +32,9 @@
 		</beans:list>
 	</beans:property>
 	<beans:property name="defaultEncoding" value="UTF-8"/>
-</beans:bean>
+	</beans:bean>
 	
 	<context:component-scan base-package="com.cmp.Green_Mall" />
-	
-	<!--  
-	<context:component-scan base-package="com.cmp.port.controller" />
-	<beans:bean id="TestService" class="com.cmp.port.service.TestServiceImpl" />
-	-->
 	
 	
 </beans:beans>

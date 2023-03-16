@@ -59,6 +59,7 @@
 			    a.pro_title = b.pro_title
 			    and
 			    a.pro_title like #{pro_title}
+			    order by align_order
 	</select>
 	
 	<!-- optionlist -->
@@ -70,6 +71,7 @@
 			    a.pro_title = b.pro_title
 	            and
 	            a.pro_title like #{pro_title}
+	            order by align_order
 	</select>
 	
 	<select id="getQList" resultType="QADto" parameterType="map">

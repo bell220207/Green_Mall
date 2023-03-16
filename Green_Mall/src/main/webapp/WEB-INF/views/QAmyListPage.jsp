@@ -28,9 +28,6 @@
 	                <c:forEach var="QAmyList" items="${QAmyList}" varStatus="status">
 		                <tr>
 		                    <td class="no"><span class="ellipsis_text">${QAmyList.qano}</span></td>
-		                    <!--  
-		                    <td class="text"><span class="ellipsis_text"><a href="<c:url value="/QAmyDetailPage/read${ph.sc.queryString}&qano=${QAmyList.qano}&writer=${QAmyList.writer}"/>">${QAmyList.text}</a></span></td>
-		                    -->
 		                    <td class="text"><span class="ellipsis_text"><a href="<c:url value="/QAmyDetailPage/read${ph.sc.queryString}&qano=${QAmyList.qano}"/>">${QAmyList.text}</a></span></td>
 		                    <td class="pro_title"><span class="ellipsis_text"><a href="#">${QAmyList.pro_title}</a></span></td>
 		                    <td class="writer"><span class="ellipsis_text">${QAmyList.writer}</span></td>

@@ -30,19 +30,16 @@ public class ProductController {
 	public String productPage(SearchCondition sc, ProductDto proDto, Model m) {
 		
 		try{
-//		System.out.println("proDto: "+proDto);
-		ProductDto list = proService.getProductInfo(proDto);
-		
-		List<String> imgList = proService.getProductImgInfo(proDto);
-		List<String> optionsList = proService.getProductOptions(proDto);
-		
-		list.setProInfoList(imgList);
-		list.setOptionList(optionsList);
-		
-		m.addAttribute("list", list);
+			ProductDto list = proService.getProductInfo(proDto);
+			List<String> imgList = proService.getProductImgInfo(proDto);
+			List<String> optionsList = proService.getProductOptions(proDto);
+			
+			list.setProInfoList(imgList);
+			list.setOptionList(optionsList);
+			
+			m.addAttribute("list", list);
 		
 		}catch(Exception e) {
-			System.out.println("111111111111");
 			e.printStackTrace();
 		}
 		return "product";
@@ -60,21 +57,15 @@ public class ProductController {
 			Integer pageNum = Integer.parseInt((String) jsonInput.get("pageNum"));
 			String proTitle = (String)jsonInput.get("proTitle");
 			
-//			System.out.println("==========qalist map==========");
-//			System.out.println("qalist pageNum: "+pageNum);
-//			System.out.println("qalist proTitle: "+proTitle);
-			
 			ProductDto proDto = new ProductDto();
 			proDto.setPro_title(proTitle);
 			
 			SearchCondition sc = new SearchCondition();
 			sc.setPage(pageNum);
 			
-			// 페이징 적용한 문의내역 리스트 가져옴
 			Qlist = proService.getQList(proDto, sc);
-//			System.out.println("Qlist 결과: "+Qlist);
+			
 		} catch (ParseException e) {
-			System.out.println("22222222222222");
 			e.printStackTrace();
 		}
 		return Qlist;
@@ -85,7 +76,6 @@ public class ProductController {
     @ResponseBody
     public List<RvDto> RVlist(@RequestBody String RVinput) {
 		
-//		System.out.println("RVinput: "+RVinput);
 		List<RvDto> result=null;
 		
 		try {
@@ -95,13 +85,6 @@ public class ProductController {
 			SearchCondition sc = (SearchCondition) map.get("sc");
 			RvDto rvDto = (RvDto) map.get("rvDto");
 			String type = (String) map.get("type");
-			
-			System.out.println("==========RVlist map==========");
-			System.out.println(map);
-			System.out.println(proDto);
-			System.out.println(sc);
-			System.out.println(rvDto);
-			System.out.println(type);
 			
 			// 새 리뷰 내역
 			result = proService.getRVlist(proDto, sc, rvDto);
@@ -113,9 +96,7 @@ public class ProductController {
 				result.get(i).setImg_list(RVimgList);
 			}
 			
-			System.out.println("RVlist 결과: "+result);
 		}catch (Exception e) {
-			System.out.println("33333333333333333333");
 			e.printStackTrace();
 		}	
 		return result;
@@ -136,32 +117,20 @@ public class ProductController {
 			SearchCondition sc = (SearchCondition) map.get("sc");
 			RvDto rvDto = (RvDto) map.get("rvDto");
 			String type = (String) map.get("type");
-			
-			System.out.println("==========proPaging map==========");
-			System.out.println(map);
-			System.out.println(proDto);
-			System.out.println(sc);
-			System.out.println(rvDto);
-			System.out.println(type);
 					
 			if(type.equals("QA")) {
 				int QAlistCnt = proService.getQAlistCnt(proDto);
 				pageHandler = new PageHandler(QAlistCnt, sc);
 				pageHandler.setType("QA");
-	//			System.out.println("proPaging QAlistCnt: "+QAlistCnt);
 			}
 			
 			if(type.equals("RV")) {
 				int RVlistCnt = proService.getRVlistCnt(proDto, sc, rvDto);
 				pageHandler = new PageHandler(RVlistCnt, sc);
 				pageHandler.setType("RV");
-				System.out.println("proPaging RVlistCnt: "+RVlistCnt);
 			}
 			
-			System.out.println(pageHandler);
-			
 		}catch(Exception e){
-			System.out.println("444444444444444444");
 			e.printStackTrace();
 		}
 		return pageHandler;
@@ -204,7 +173,6 @@ public class ProductController {
 			map.put("type", type);
 			
 		} catch (ParseException e) {
-			System.out.println("5555555555555555");
 			e.printStackTrace();
 		}
 		

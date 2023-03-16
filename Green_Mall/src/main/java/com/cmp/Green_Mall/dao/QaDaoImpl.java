@@ -64,7 +64,6 @@ public class QaDaoImpl implements QaDao{
 
 	@Override
 	public int wrtCmt(QADto qaDto) {
-		System.out.println("wrtCmt 다오");
 		return session.insert(namespace+"wrtCmt", qaDto);
 	}
 

@@ -263,12 +263,10 @@
 .rvBox-sort button{
 	background: none;
 	color: white;
+	border: none;
 }
 
 .rvBox-searchBox{
-	/*
-	background: pink;
-	*/
 	display: inline-block;	
 }
 
@@ -366,80 +364,6 @@
 .rvBox-searchBox-stars-list .ops{
 	border-bottom: 1px solid rgba(0,0,0,0.3);
 }
-
-/*
-.pReview .rvBox .rvBox-title{
-	width: 100%;
-    height: 40px;
-    background: black;
-    background: rgba(0,0,0,0.3);
-    padding-top: 15px;  
-}
-
-.pReview .rvBox .rvBox-title .rvBox-sort{
-	color: white;
-	float: left;
-	padding: 0 30px 0 20px;		
-}
-
-.pReview .rvBox .rvBox-title .rvBox-sort button{
-	background: none;
-	color: white;
-	font-size: 12px;
-}
-
-.pReview .rvBox .rvBox-title .rvBox-sort span{
-}
-
-.pReview .rvBox .rvBox-title .rvBox-search{
-	float: left;
-	padding-right: 10px;
-	position: relative;
-}
-
-.pReview .rvBox .rvBox-title .rvBox-search input{
-	width: 180px;
-    padding-left: 10px;
-}
-
-#rvBox-search-type{
-	width: 60px;
-	
-}
-
-#rvBox-search-type-list{
-	width: 60px;
-}
-
-.search-type-list{
-	
-}
-
-#rvBox-search-type-list input{
-	width: 60px;
-}
-
-
-.search_icon{
-	font-family : 'Material Icons';	
-	font-size: 20px;
-	position: absolute;
-	right: 15px;
-    top: -3px;
-	
-}
-
-.pReview .rvBox .rvBox-title .rvBox-starSelcetBtn{
-	width: 130px;
-	width : 5px;
-	
-	height: 22px;
-	background: white;
-	float: left;
-}
-
-
-*/
 
 .pReview .rvBox .rvBox-list{
 	padding: 20px 0 15px 0px;

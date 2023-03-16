@@ -8,7 +8,6 @@
 	var ContextPath = "${pageContext.request.contextPath}";
 	var sc = window.location.search;
 	var mode = "${mode}";
-
 </script>
 
 <script src="<c:url value='/js/QAmyDetail.js'/>" ></script>
@@ -20,8 +19,8 @@
 				<h2 class="writing-header"> My 문의 ${mode=="read"? "읽기" : "쓰기"}</h2>
 				<form action="" id="QAform" class="frm">
 				<c:if test="${mode ne 'new'}">
-					<input type="text" name="qano" value="${QADto.qano}" readonly="readonly">
-					<input type="text" name="writer" value="${QADto.writer}" readonly="readonly">
+					<input type="hidden" name="qano" value="${QADto.qano}" readonly="readonly">
+					<input type="hidden" name="writer" value="${QADto.writer}" readonly="readonly">
 					<input type="text" name="reg_date" value="${QADto.reg_date}" readonly="readonly">
 				</c:if>
 					<input type="text" id="pro_title" name="pro_title" value="${QADto.pro_title}" readonly="readonly">

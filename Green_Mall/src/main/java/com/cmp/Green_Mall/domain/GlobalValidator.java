@@ -24,13 +24,6 @@ public class GlobalValidator implements Validator{
         String Rgx = "^[a-zA-Z]{1}[a-zA-Z0-9_]{4,12}$"; // 영문으로 시작하는 영문+숫자조합
         String eRgx = "^[_a-zA-Z0-9-\\.]+@[\\.a-zA-Z0-9-]+\\.[a-zA-Z]+$";
         
-//        System.out.println("id: "+id);
-//        System.out.println("pwd: "+pwd);
-//        System.out.println("name: "+name);
-//        System.out.println("email: "+email);
-//        System.out.println("birth: "+birth);
-//        System.out.println("idCheck: "+idCheck);
-        
         // 아이디 검증
         if(id==null||id=="") {
             ValidationUtils.rejectIfEmptyOrWhitespace(errors, "id",  "required");
@@ -39,7 +32,6 @@ public class GlobalValidator implements Validator{
             errors.rejectValue("id", "invalidLength", new String[]{"", "5", "12"}, null);
         }
         else if(!id.matches(Rgx)){
-            System.out.println("id 결과: "+id.matches(Rgx));
             errors.rejectValue("id", "invalidPattern", null);
         }
         // 비번 검증
@@ -50,7 +42,6 @@ public class GlobalValidator implements Validator{
             errors.rejectValue("pwd", "invalidLength", new String[]{"", "5", "12"}, null);
         }
         else if(!pwd.matches(Rgx)) {
-            System.out.println("pwd 결과: " + pwd.matches(Rgx));
             errors.rejectValue("pwd", "invalidPattern", null);
         }
         // 이름 검증
@@ -59,11 +50,9 @@ public class GlobalValidator implements Validator{
         }
         // 이메일 검증
         else if(email!=null && email!="" && !email.matches(eRgx)){
-            System.out.println("email 결과: "+email.matches(eRgx));
             errors.rejectValue("email", "invalidPattern", null);
         }
         else if(idCheck==null || idCheck=="") {
-        	System.out.println("아이디 체크 안함");
         	ValidationUtils.rejectIfEmptyOrWhitespace(errors, "idCheck",  "required.idCheck");
         }
 	}

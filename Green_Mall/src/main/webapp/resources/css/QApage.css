@@ -4,10 +4,6 @@
 	min-height: 600px;
 }
 
-#qa-list-container{
-
-}
-
 .QAlist{
 	min-height: 500px;
 }
@@ -33,10 +29,6 @@
     border-bottom: 1px solid #ddd;
 }
 
-.QAlist table td {
-}
-
-/*하드코딩이긴한디...하..퍼센트로 하니 안되네*/
 .QAlist table .no { width: 60px; max-width : 60px;}
 .QAlist table .text   { width:250px; max-width : 250px;  }
 .QAlist table td.text { text-align: left;  }
@@ -47,19 +39,10 @@
 
 .QAlist table td span{ display: block; }
 
-.QAdetailBox{
-
-}
-
-/*================================================*/
-
 .writing-header{
 	margin: 20px 0 0 0;
     padding-bottom: 10px;
     border-bottom: 1px solid #323232;
-}
-
-#QAform{
 }
 
 #QAform input {
@@ -97,8 +80,6 @@
 .brdBtn:hover {
     text-decoration: underline;
 }
-
-/*==========================================*/
 
 .cmt_ul {
     border:  1px solid rgb(235,236,239);
@@ -146,18 +127,11 @@
 }
 
 .comment-img {
-	/*
-    font-size:36px;
-    */
     position: absolute;
     background: pink;
     width: 40px;
 	height: 40px;
 	clip-path: circle(19px);
-}
-
-.comment-img .profileImg {
-	
 }
 
 .comment-item {

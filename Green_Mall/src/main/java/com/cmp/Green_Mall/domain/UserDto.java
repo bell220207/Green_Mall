@@ -22,8 +22,6 @@ public class UserDto {
 	public void setBirth(String birth) { this.birth = birth; }
 	public String getIdCheck() { return idCheck; }
 	public void setIdCheck(String idCheck) { this.idCheck = idCheck; }
-	
-	/*추가*/
 	public String getProfileImg() {	return profileImg; }
 	public void setProfileImg(String profileImg) { this.profileImg = profileImg; }
 	

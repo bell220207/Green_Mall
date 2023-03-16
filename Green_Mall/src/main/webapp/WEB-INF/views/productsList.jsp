@@ -59,7 +59,6 @@
                     	
                     	<div class="proCont">
 	                    	<div class="proUp">
-	                    	<!-- /////////////////////////////////////////////// -->
 	                    	<c:if test="${empty list}">
 	                    		<span class="noProduct">등록된 상품이 없습니다</span>
 	                    	</c:if>

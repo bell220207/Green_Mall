@@ -33,29 +33,25 @@ public class UserController {
     // 로그인 페이지
 	@RequestMapping("/loginPage")
 	public void loginPage() {
-//		System.out.println("loginPage 통과");
 	}
 
 	// 로그인 기능
     @PostMapping("/login/login")
-	public String login(UserDto user, boolean rememberId, 
+	public String login(UserDto userDto, boolean rememberId, 
 						RedirectAttributes rattr,
 						String toURL,
 			            HttpServletResponse response, HttpServletRequest request) {
 		
-    	String id = user.getId();
-		String pwd = user.getPwd();
+    	String id = userDto.getId();
+		String pwd = userDto.getPwd();
         
     	// 서비스 호출
-    	UserDto result = userService.login(user);
-    	System.out.println(result);
+    	UserDto result = userService.login(userDto);
     	
 		toURL = (toURL==null || toURL.equals("") ? "/" : toURL);
-    	System.out.println("toURL: "+toURL);
     	if(result==null) { // 로그인 실패
     		String msg ="";
             try {
-//            	msg = URLEncoder.encode("아이디 혹은 패스워드가 일치하지 않습니다", "utf-8");
             	msg="loginFail";
             	rattr.addFlashAttribute("msg", msg);
 			} catch (Exception e) {
@@ -74,7 +70,6 @@ public class UserController {
 	                cookie.setPath("/");
 	                response.addCookie(cookie);
             	}catch(Exception e){
-            		System.out.println(e);
             	}
             }else {
                 Cookie cookie = new Cookie("id", id);
@@ -97,31 +92,28 @@ public class UserController {
 	@GetMapping("/registerPage")
 	public void registerPage() {
 	}
-	
-	// 회원가입 기능
+    
     @PostMapping("/registerPage")
 	public String register(@Valid UserDto user, BindingResult result, 
 							Model m, RedirectAttributes rattr){
     	
 		try {
-			
 			if(result.hasErrors()) {
+				System.out.println("result: "+result);
 	        	throw new Exception();
 			}
-			
-			System.out.println("user: "+user);
 			
 			int rg_result = userService.register(user);
 	    	if(rg_result==1) { // 가입 성공
 				rattr.addFlashAttribute("msg", "REG_OK");
 	    		return "redirect:/";				
-//				m.addAttribute("msg", "REG_OK");
-//	    		return "home";
+
 	    	}else { // 가입 실패
 	        	throw new Exception();
 	    	}
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 			m.addAttribute("user", user);
 			m.addAttribute("msg", "REG_ERR");
 			return "registerPage";

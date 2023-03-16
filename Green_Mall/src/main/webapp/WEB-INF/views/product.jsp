@@ -366,9 +366,7 @@
 								</div> <!-- proPage -->
 	                    	</div> <!-- proUp -->
                     	</div> <!-- proCont -->
-  
                     	<div id="proFoot"></div>
-
                     </div>
 				</div>
 			</div>

@@ -7,7 +7,7 @@
                 <div class="container">
                     <div id="regBox">
                         <div id="logo">Register</div>
-                    	<form:form modelAttribute="user">
+                    	<form:form modelAttribute="userDto">
                             <div id="msg" class="msg">
 						        <form:errors path="id"/>
 						    	<form:errors path="idCheck"/>

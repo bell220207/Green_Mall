@@ -4,9 +4,6 @@ $(document).ready(function(){
 	
 });
 
-
-
-
 function st_Menu(){
 	
 	var target=".";
@@ -38,6 +35,5 @@ function st_Menu(){
 		if(sub_ct=="acc"){target+="acce-acc"; }
 		if(sub_ct=="ect"){target+="acce-ect"; }
 	}
-	
 	$(target).css("background-color", "rgba(0, 0, 0, 0.1)");
 }

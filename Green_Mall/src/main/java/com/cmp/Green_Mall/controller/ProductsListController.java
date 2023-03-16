@@ -29,41 +29,21 @@ public class ProductsListController {
 	@GetMapping("/productsList")
 	public String products(HttpServletRequest request, Model m,
 						   SearchCondition sc) {
-		System.out.println("productsList 통과");
 		sc.setPageSize(9);
-		System.out.println("sc: "+sc);
-		
-//		Integer page = sc.getPage();
-//		Integer pageSize = sc.getPageSize();
-//		System.out.println("page: "+page);
-//		System.out.println("pageSize: "+pageSize);
-//		System.out.println("keyword: "+sc.getKeyword());
-		
+
 		if(!loginCheck(request)) { // false
-			System.out.println("toUrl: "+request.getRequestURL());
 			return "redirect:/loginPage?toURL="+request.getRequestURL();
 		}
 		
 		try{
 			
-			/*
-			List<BoardDto> list = proService.getList();
-			System.out.println(list);
-			m.addAttribute("list", list);
-			*/
-			
 			/*페이징*/
 			int totalCnt = proService.getSearchResultCnt(sc);
-			System.out.println("productsList totalCnt: "+totalCnt);
 			PageHandler pageHandler = new PageHandler(totalCnt, sc);
-			System.out.println("productsList pageHandler: "+pageHandler);
 			m.addAttribute("ph", pageHandler);
 
 			/*페이지 데이터 뿌리기*/
 			List<ProductDto> list =	proService.getSearchResultPage(sc);
-//			System.out.println("==============결과===============");
-			System.out.println("productsList 페이지 결과: "+list);
-//			System.out.println("================================");
 			
 			m.addAttribute("list", list);
 			
